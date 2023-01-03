@@ -1,8 +1,8 @@
 # The Bots Mainboard
 
-The majoriy of this board/schematics were created watching [Phils Lab](https://www.youtube.com/@PhilsLab) on youtube 
+This is my first PCB design project. The majoriy of this board/schematics were created watching [Phils Lab](https://www.youtube.com/@PhilsLab) on youtube and using his projects as examples. 
 
-The soccer playing AI will compute target velocities for all 6 robots and send them over USB to the mainboard, which will then pack the velocity data into a radio payload and send it over. Each robot will have a mainboard, receive the pacet over radio and put the velocity command onto the CAN Bus as a new setpoint for the motor drivers. 
+The soccer playing AI will compute target velocities for all 6 robots and send them over USB to the mainboard, which will then send the velocity data over radio. Each robot will have its own mainboard, receive the pacet over radio, unpack and send a velocity command over the CAN Bus (which is then picked up by the motor controllers)
 
 ![](docs/bots.drawio.png)
 
@@ -10,7 +10,7 @@ So the main goal of the board is to act as a radio to CAN bridge if flashed as a
 
 ![BoardyMcBoardFace](https://user-images.githubusercontent.com/31548846/210305385-8d1ab096-a10a-4936-882e-6e1a36c88515.png)
 
-Additionally, the ball detector circuit, when plugged into a robot will be facing the "mouth" of the robot to detect any balls that enter.
+Additionally, the ball detector circuit, when plugged into a robot will be facing the "mouth" of the robot to detect any balls that enter. This helps with determining when to kick/chip the golf ball.
 
 Here is one of our competitors, UBC Thunderbots's robot to put this board into perspective. (We don't have robots yet)
 
